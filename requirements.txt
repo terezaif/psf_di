@@ -4,3 +4,4 @@ pandas==1.2.1
 seaborn==0.11.1
 dash==1.19.0
 parsenvy==3.0.2
+gunicorn==20.0.4
