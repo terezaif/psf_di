@@ -58,7 +58,9 @@ app.layout = html.Div(
                     style={"width": "80%", "display": "inline-block"},
                 ),
             ],
-            style={"box-shadow": "rgb(240, 240, 240) 5px 5px 5px 0px"},
+            style={
+                "box-shadow": "rgb(240, 240, 240) 5px 5px 5px 0px",
+            },
         ),
         html.Div(
             children="The Diversity and Inclusion Working Group is a volunteer workgroup of the Python Software Foundation."
@@ -75,7 +77,12 @@ app.layout = html.Div(
         ),
         dcc.Graph(id="id_map", figure=fig_map),
     ],
-    style={"font-family": "Courier New, monospace", "width": 1200, "height": 800},
+    style={
+        "font-family": "Courier New, monospace",
+        "width": 1200,
+        "height": 800,
+        "max-width": "100%",
+    },
 )
 
 # app.run_server(debug=True, use_reloader=False)
