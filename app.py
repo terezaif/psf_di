@@ -1,6 +1,10 @@
 import plotly.graph_objects as go  # or plotly.express as px
 import pandas as pd
 
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+
 data = pd.read_csv("di.csv")
 token = open(".mapbox_token").read()
 colors = ["#306998", "#FFD43B"] * 10
@@ -22,10 +26,6 @@ fig.update_layout(
     mapbox={"accesstoken": token, "style": "streets", "zoom": 0.5}, showlegend=False
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
 
 app = dash.Dash()
 app.layout = html.Div([dcc.Graph(figure=fig)])
