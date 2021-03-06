@@ -4,9 +4,11 @@ import pandas as pd
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import parsenvy
 
 data = pd.read_csv("di.csv")
-token = open(".mapbox_token").read()
+# token = open(".mapbox_token").read()
+token = parsenvy.str("mapbox_token")
 colors = ["#306998", "#FFD43B"] * 10
 tf = dict(family="sans serif", size=14, color=colors[0])
 
