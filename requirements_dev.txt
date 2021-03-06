@@ -7,3 +7,4 @@ dash==1.19.0
 black==20.8b1
 flake8==3.8.4
 parsenvy==3.0.2
+pre-commit==2.9.3
