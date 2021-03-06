@@ -29,8 +29,17 @@ fig.update_layout(
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
-app = dash.Dash()
+external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
+
+# Launch the application:
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
+
 app.layout = html.Div([dcc.Graph(figure=fig)])
 
 # app.run_server(debug=True, use_reloader=False)
-app.run_server()
+
+# Add the server clause:
+if __name__ == "__main__":
+    app.run_server()
